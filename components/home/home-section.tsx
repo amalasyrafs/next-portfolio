@@ -8,7 +8,7 @@ const HomeSection = ({ bgColor = "bg-white" }: HomeSectionProps) => {
   const [openMenu, setOpenMenu] = useState<Boolean>(false);
 
   return (
-    <div className={`${bgColor} flex flex-col h-screen py-4 snap-center`}>
+    <div className={`${bgColor} flex flex-col h-screen py-4 px-16 snap-center`}>
       <header className="flex justify-between items-center w-full">
         <nav className="flex">
           <h6 className="text-neutral-400">amal</h6>
