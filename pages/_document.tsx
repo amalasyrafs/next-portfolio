@@ -26,6 +26,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
             rel="stylesheet"
           />
+          <script
+            defer
+            src="https://unpkg.com/tailwindcss-intersect@1.x.x/dist/observer.min.js"
+          ></script>
         </Head>
         <body>
           <Main />

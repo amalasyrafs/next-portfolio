@@ -1902,6 +1902,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+tailwindcss-intersect@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-intersect/-/tailwindcss-intersect-1.0.1.tgz#0d9a8678dbe4ff678a8bdbd164cbf70f59372154"
+  integrity sha512-metJ0PRVeZzCIjii9mT4vujC5nxoeqaeSAYS0AMzzgJ2jQyLAPj8r881ZBS6EvlEMyv023Gi4BC2wcGo8zxGBA==
+
 tailwindcss@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.1.5.tgz#c8e0bb1cbacf29a6411d9c07debc1af9d388d4ca"

@@ -4,6 +4,8 @@ import axios from "axios";
 // Local import
 import HomeSection from "@/components/home/home-section";
 import PortfolioSection from "@/components/home/portfolio-section";
+import AboutSection from "@/components/home/about-section";
+import EmptySection from "@/components/home/empty-section";
 
 export interface PortfolioItem {
   id: number;
@@ -28,14 +30,18 @@ const Home = ({ portfolioData }: PortfolioItemResponse) => {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
       <HomeSection />
-      {portfolioData?.map((data, index) => (
-        <PortfolioSection
-          key={data.id}
-          data={data}
-          contentAlignment={index % 2 === 0 ? "left" : "right"}
-        />
-      ))}
-      <HomeSection />
+      {/* <AboutSection /> */}
+      {portfolioData.length > 0 ? (
+        portfolioData?.map((data, index) => (
+          <PortfolioSection
+            key={data.id}
+            data={data}
+            contentAlignment={index % 2 === 0 ? "left" : "right"}
+          />
+        ))
+      ) : (
+        <EmptySection title="Portfolio" />
+      )}
       <HomeSection />
     </div>
   );
