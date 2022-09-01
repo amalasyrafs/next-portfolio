@@ -1,7 +1,21 @@
 import Image from "next/image";
-import { PortfolioItem } from "pages/index";
 
 type alignmentEnum = "left" | "right";
+
+export interface PortfolioItem {
+  id: number;
+  attributes: {
+    name: string;
+    url: string;
+    description?: string;
+    created_at: any;
+    updated_at: any;
+    published_at: any;
+    coverPhoto?: {
+      data: any[];
+    };
+  };
+}
 
 interface PortfolioSectionProps {
   bgColor?: string;
@@ -40,7 +54,7 @@ const PortfolioSection = ({
           <div className="w-1/3 bg-red-100 h-4 absolute top-1/2 left-4 z-0"></div>
         </a>
       </div>
-      <div className="bg-stone-600 w-1/2 relative opacity-80 flex items-center justify-center ">
+      <div className="bg-stone-500 w-1/2 relative opacity-100 flex items-center justify-center ">
         <Image
           src={`${process.env.BASE_URL}${data?.attributes.coverPhoto?.data[0].attributes.url}`}
           alt={data?.attributes.coverPhoto?.data[0].attributes.caption}
