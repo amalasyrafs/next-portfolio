@@ -2,7 +2,7 @@ const colors = {
   transparent: "transparent",
   current: "currentColor",
   invoke: {
-    bgBlack: "#171717",
+    bgBlack: "#161616",
     textBlack: "#000000",
     white: "#FFFFF7",
     box: "#F4F4EA",
