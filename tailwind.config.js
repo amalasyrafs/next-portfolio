@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const { colors } = require("./constants/theme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,8 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: colors,
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
+        raleway: ["var(--font-raleway)"],
       },
     },
   },
