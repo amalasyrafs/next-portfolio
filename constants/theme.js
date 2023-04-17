@@ -16,6 +16,7 @@ const colors = {
     meniaga: "#0082A2",
     error: "#EB5757",
     darkGrey: "#808080",
+    orange: "#f3501a",
     hover: {
       white: "#F4F4EA",
       black: "#242424",
