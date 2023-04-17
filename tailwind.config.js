@@ -14,6 +14,9 @@ module.exports = {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         raleway: ["var(--font-raleway)"],
       },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
     },
   },
   plugins: [],

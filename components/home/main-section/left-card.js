@@ -6,7 +6,7 @@ export default function LeftCard() {
   return (
     // Left card
     <div className="flex w-1/4 flex-col justify-center">
-      <div className="rounded-3xl bg-invoke-white text-invoke-textBlack shadow-lg shadow-invoke-blue/40">
+      <div className="rounded-[40px] bg-invoke-yellowGreen text-invoke-textBlack shadow-lg shadow-invoke-blue/40">
         <div className="flex items-center gap-2 px-8 pt-8">
           <IconBg containerStyle={"w-5 h-5 border-invoke-textBlack"}>
             <AiOutlineArrowRight className="text-invoke-bgBlack" size={10} />

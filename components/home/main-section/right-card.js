@@ -5,7 +5,7 @@ export default function RightCard() {
   return (
     // Right card
     <div className="relative flex w-1/4 flex-col justify-center">
-      <div className="bg-invoke-orange absolute -top-[10vh] left-[calc(50%_-_24px)] z-10 flex h-36 w-12 flex-col gap-1 rounded-sm p-1">
+      <div className="absolute -top-[10vh] left-[calc(50%_-_24px)] z-10 flex h-36 w-12 flex-col gap-1 rounded-sm bg-invoke-orange p-1">
         {[
           "bg-white/50",
           "bg-white/50",
@@ -23,7 +23,7 @@ export default function RightCard() {
           <div key={index} className={`h-2 w-full rounded-md ${el}`} />
         ))}
       </div>
-      <div className="relative rounded-3xl bg-invoke-white px-8 pb-4 text-invoke-textBlack">
+      <div className="relative rounded-[40px] bg-invoke-white px-8 pb-4 text-invoke-textBlack">
         <div className="flex w-full items-center justify-center border-b border-b-invoke-bgBlack/80 py-4">
           <div className="h-3 w-20 rounded-full bg-invoke-bgBlack" />
         </div>
@@ -36,8 +36,8 @@ export default function RightCard() {
           </div>
         </div>
         <div className="relative py-4">
-          <div className="absolute top-0 right-2 h-px w-[calc(60%_-_16px)] bg-gradient-to-r from-invoke-textBlack/0 via-invoke-textBlack/60 to-invoke-textBlack/10" />
-          <div className="absolute top-0 -right-4 h-6 w-6 rounded-tr-full border-t border-r border-invoke-bgBlack/10" />
+          <div className="absolute right-2 top-0 h-px w-[calc(60%_-_16px)] bg-gradient-to-r from-invoke-textBlack/0 via-invoke-textBlack/60 to-invoke-textBlack/10" />
+          <div className="absolute -right-4 top-0 h-6 w-6 rounded-tr-full border-r border-t border-invoke-bgBlack/10" />
 
           {/* Image div */}
           <div className="relative flex max-h-[380px] w-full justify-center overflow-hidden rounded-[20px]">

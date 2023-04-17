@@ -9,7 +9,9 @@ const raleway = Raleway({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={`${inter.variable} ${raleway.variable} font-sans`}>
+    <main
+      className={`${inter.variable} ${raleway.variable} bg-invoke-bgBlack font-sans`}
+    >
       <Component {...pageProps} />
     </main>
   );
