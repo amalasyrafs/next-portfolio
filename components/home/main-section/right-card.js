@@ -1,27 +1,79 @@
 import Image from "next/image";
 import ProfileImage from "@/assets/images/invokeProfile.jpg";
+import { classConcatenator } from "@/helpers/classConcatenator";
 
-export default function RightCard() {
+export default function RightCard({ extended }) {
   return (
     // Right card
     <div className="relative flex w-1/4 flex-col justify-center">
-      <div className="absolute -top-[10vh] left-[calc(50%_-_24px)] z-10 flex h-36 w-12 flex-col gap-1 rounded-sm bg-invoke-orange p-1">
-        {[
-          "bg-white/50",
-          "bg-white/50",
-          "bg-white/50",
-          "bg-white/50",
-          "bg-white/50",
-          "bg-white/50",
-          "bg-white/30",
-          "bg-white/30",
-          "bg-white/30",
-          "bg-white/30",
-          "bg-white/20",
-          "bg-white/20",
-        ].map((el, index) => (
-          <div key={index} className={`h-2 w-full rounded-md ${el}`} />
-        ))}
+      <div
+        className={classConcatenator(
+          "absolute left-[calc(50%_-_24px)] z-10 flex w-12 flex-col gap-1 rounded-sm bg-invoke-orange p-1",
+          extended ? "-top-[428px] h-[496px] rounded-t-md" : "-top-[10vh] h-36 "
+        )}
+      >
+        {extended
+          ? [
+              "bg-white/60",
+              "bg-white/60",
+              "bg-white/60",
+              "bg-white/60",
+              "bg-white/60",
+              "bg-white/50",
+              "bg-white/50",
+              "bg-white/50",
+              "bg-white/50",
+              "bg-white/50",
+              "bg-white/50",
+              "bg-white/40",
+              "bg-white/40",
+              "bg-white/40",
+              "bg-white/40",
+              "bg-white/40",
+              "bg-white/40",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/30",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+            ].map((el, index) => (
+              <div key={index} className={`h-2 w-full rounded-md ${el}`} />
+            ))
+          : [
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+              "bg-white/20",
+            ].map((el, index) => (
+              <div key={index} className={`h-2 w-full rounded-md ${el}`} />
+            ))}
       </div>
       <div className="relative rounded-[40px] bg-invoke-white px-8 pb-4 text-invoke-textBlack">
         <div className="flex w-full items-center justify-center border-b border-b-invoke-bgBlack/80 py-4">

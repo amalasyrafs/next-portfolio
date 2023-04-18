@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
 // Local import
 import MainSection from "@/components/home/main-section";
@@ -17,9 +18,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainSection />
-      <PortfolioSection />
-      <ContactUsSection />
+      <ReactLenis
+        root
+        options={{
+          infinite: true,
+          smoothWheel: true,
+        }}
+      >
+        <MainSection />
+        <PortfolioSection />
+        <ContactUsSection />
+      </ReactLenis>
     </>
   );
 }
