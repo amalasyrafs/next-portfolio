@@ -1,12 +1,15 @@
 import Head from "next/head";
+import { useState } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 // Local import
 import MainSection from "@/components/home/main-section";
 import PortfolioSection from "@/components/home/portfolio-section";
 import ContactUsSection from "@/components/home/contact-us-section";
+import VerticalNavbar from "@/components/home/navbar";
 
 export default function Home() {
+  const [section, setSection] = useState(0);
   return (
     <>
       <Head>
@@ -25,9 +28,10 @@ export default function Home() {
           smoothWheel: true,
         }}
       >
-        <MainSection />
-        <PortfolioSection />
-        <ContactUsSection />
+        <MainSection setSection={setSection} />
+        <PortfolioSection setSection={setSection} />
+        <ContactUsSection setSection={setSection} />
+        <VerticalNavbar section={section} />
       </ReactLenis>
     </>
   );

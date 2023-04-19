@@ -1,12 +1,24 @@
-import MainSection from "../main-section";
+import { useEffect, useRef } from "react";
+import useOnScreen from "@/hooks/useOnScreen";
 import LeftCard from "../main-section/left-card";
 import MiddleCard from "../main-section/middle-card";
 import RightCard from "../main-section/right-card";
 
-export default function ContactUsSection() {
+export default function ContactUsSection({ setSection }) {
+  const ref = useRef(null);
+  const isVisible = useOnScreen(ref, "0px", 0.45);
+
+  useEffect(() => {
+    if (isVisible) {
+      setSection(2);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      className="relative h-full min-h-[80vh] w-full overflow-hidden bg-invoke-bgBlack"
+      ref={ref}
+      id="section-2"
+      className="relative h-full min-h-screen w-full overflow-hidden bg-invoke-bgBlack"
       style={{
         backgroundImage:
           "radial-gradient(rgba(255, 255, 255, 0.25) 0.5px, transparent 0)",

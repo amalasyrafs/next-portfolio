@@ -1,6 +1,20 @@
-export default function PortfolioSection() {
+import { useEffect, useRef } from "react";
+import useOnScreen from "@/hooks/useOnScreen";
+
+export default function PortfolioSection({ setSection }) {
+  const ref = useRef(null);
+  const isVisible = useOnScreen(ref);
+
+  useEffect(() => {
+    if (isVisible) {
+      setSection(1);
+    }
+  }, [isVisible]);
+
   return (
     <section
+      ref={ref}
+      id="section-1"
       className="h-full min-h-screen w-full bg-invoke-bgBlack p-8"
       style={{
         backgroundImage:

@@ -97,6 +97,7 @@ export default function RightCard({ extended }) {
               src={ProfileImage}
               alt="Amaluddin Asyraf"
               className="object-cover"
+              priority={true}
             />
           </div>
         </div>
