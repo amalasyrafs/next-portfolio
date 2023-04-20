@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import useOnScreen from "@/hooks/useOnScreen";
+import Portfolio from "./portfolio";
 
 export default function PortfolioSection({ setSection }) {
   const ref = useRef(null);
@@ -35,6 +36,8 @@ export default function PortfolioSection({ setSection }) {
         <p className={"py-2 font-sans text-sm"}>
           Selected works that I have worked on:
         </p>
+
+        <Portfolio />
       </div>
     </section>
   );

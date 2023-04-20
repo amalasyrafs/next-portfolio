@@ -26,6 +26,7 @@ export default function VerticalNavbar({ section }) {
       </Switch>
       {[0, 1, 2].map((el) => (
         <div
+          key={el}
           onClick={() =>
             lenis?.scrollTo(`#section-${el}`, {
               duration: 1.5,
