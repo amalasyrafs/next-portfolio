@@ -33,8 +33,8 @@ export default function ContactUsSection({ setSection }) {
             className={" text-center font-raleway text-xl font-semibold"}
             style={{
               background: "-webkit-linear-gradient(#eee, #333)",
-              "-webkit-background-clip": "text",
-              "-webkit-text-fill-color": "transparent",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Let's collaborate
@@ -45,8 +45,8 @@ export default function ContactUsSection({ setSection }) {
             }
             style={{
               background: "-webkit-linear-gradient(#eee, #333)",
-              "-webkit-background-clip": "text",
-              "-webkit-text-fill-color": "transparent",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Tell me about your

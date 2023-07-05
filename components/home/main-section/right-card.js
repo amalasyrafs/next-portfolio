@@ -1,81 +1,85 @@
 import Image from "next/image";
 import ProfileImage from "@/assets/images/invokeProfile.jpg";
 import { classConcatenator } from "@/helpers/classConcatenator";
+import useWindowHeight from "@/hooks/useWindowHeight";
+import { useEffect, useRef, useState } from "react";
+
+const getBarOpacity = (currentBar, arrLength) => {
+  const fraction = currentBar / arrLength;
+  if (fraction <= 0.1) {
+    return 0.6;
+  } else if (fraction > 0.1 && fraction <= 0.2) {
+    return 0.55;
+  } else if (fraction > 0.2 && fraction <= 0.3) {
+    return 0.5;
+  } else if (fraction > 0.3 && fraction <= 0.4) {
+    return 0.45;
+  } else if (fraction > 0.4 && fraction <= 0.5) {
+    return 0.4;
+  } else if (fraction > 0.5 && fraction <= 0.75) {
+    return 0.3;
+  } else if (fraction > 0.75 && fraction <= 1) {
+    return 0.2;
+  } else {
+    return 0.2;
+  }
+};
 
 export default function RightCard({ extended }) {
+  const windowHeight = useWindowHeight();
+  const [barHeight, setBarHeight] = useState(244);
+  const [barArr, setBarArr] = useState(new Array(20).fill(1));
+  const [barHeightExt, setBarHeightExt] = useState(559);
+  const [barArrExt, setBarArrExt] = useState(new Array(40).fill(1));
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    const barHeight = (windowHeight - divRef.current.clientHeight + 40) / 2;
+    const arrLength = Math.floor(barHeight / 12);
+    const arrLengthExt = Math.floor((barHeight + 335) / 12);
+    setBarHeight(barHeight);
+    setBarArr(new Array(arrLength).fill(1));
+    setBarHeightExt(barHeight + 335);
+    setBarArrExt(new Array(arrLengthExt).fill(1));
+  }, [windowHeight]);
   return (
     // Right card
     <div className="relative flex w-1/4 flex-col justify-center">
       <div
         className={classConcatenator(
           "absolute left-[calc(50%_-_24px)] z-10 flex w-12 flex-col gap-1 rounded-sm bg-invoke-orange p-1",
-          extended ? "-top-[428px] h-[496px] rounded-t-md" : "-top-[10vh] h-36 "
+          extended ? "-top-[428px] rounded-t-md" : "-top-[10vh] h-36 "
         )}
+        style={{
+          height: extended ? barHeightExt : barHeight,
+        }}
       >
         {extended
-          ? [
-              "bg-white/60",
-              "bg-white/60",
-              "bg-white/60",
-              "bg-white/60",
-              "bg-white/60",
-              "bg-white/50",
-              "bg-white/50",
-              "bg-white/50",
-              "bg-white/50",
-              "bg-white/50",
-              "bg-white/50",
-              "bg-white/40",
-              "bg-white/40",
-              "bg-white/40",
-              "bg-white/40",
-              "bg-white/40",
-              "bg-white/40",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/30",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-            ].map((el, index) => (
-              <div key={index} className={`h-2 w-full rounded-md ${el}`} />
+          ? barArrExt.map((el, index, arr) => (
+              <div
+                style={{
+                  backgroundColor: "white",
+                  opacity: getBarOpacity(index + 1, arr.length),
+                }}
+                key={index}
+                className={`h-2 w-full rounded-md`}
+              />
             ))
-          : [
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-              "bg-white/20",
-            ].map((el, index) => (
-              <div key={index} className={`h-2 w-full rounded-md ${el}`} />
+          : barArr.map((el, index) => (
+              <div
+                style={{
+                  backgroundColor: "white",
+                  opacity: 0.2,
+                }}
+                key={index}
+                className={`h-2 w-full rounded-md`}
+              />
             ))}
       </div>
-      <div className="relative rounded-[40px] bg-invoke-white px-8 pb-4 text-invoke-textBlack">
+      <div
+        ref={divRef}
+        className="relative rounded-[40px] bg-invoke-white px-8 pb-4 text-invoke-textBlack"
+      >
         <div className="flex w-full items-center justify-center border-b border-b-invoke-bgBlack/80 py-4">
           <div className="h-3 w-20 rounded-full bg-invoke-bgBlack" />
         </div>
