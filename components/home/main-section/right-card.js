@@ -48,7 +48,9 @@ export default function RightCard({ extended }) {
       <div
         className={classConcatenator(
           "absolute left-[calc(50%_-_24px)] z-10 flex w-12 flex-col gap-1 rounded-sm bg-invoke-orange p-1",
-          extended ? "-top-[428px] rounded-t-md" : "-top-[10vh] h-36 "
+          extended
+            ? "-top-[calc(10vh_+_335px)] rounded-t-md"
+            : "-top-[10vh] h-36 "
         )}
         style={{
           height: extended ? barHeightExt : barHeight,
